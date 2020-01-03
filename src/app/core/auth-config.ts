@@ -1,13 +1,13 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authConfig: AuthConfig = {
-  issuer: 'https://demo.identityserver.io',
-  clientId: 'spa', // The "Auth Code + PKCE" client
+  issuer: 'https://identityexternal-qa.altsrc.net',
+  clientId: 'local_test_pkce', // The "Auth Code + PKCE" client
   responseType: 'code',
-  redirectUri: window.location.origin + '/index.html',
+  redirectUri: window.location.origin,
   silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html',
-  scope: 'openid profile email offline_access api',
-  silentRefreshTimeout: 5000, // For faster testing
+  scope: 'openid profile getCciProfile',
+  silentRefreshTimeout: 3000, // For faster testing
   timeoutFactor: 0.25, // For faster testing
   sessionChecksEnabled: true,
   showDebugInformation: true, // Also requires enabling "Verbose" level in devtools
